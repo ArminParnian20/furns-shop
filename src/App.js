@@ -68,6 +68,11 @@ const App = () => {
     favorite:false,
     price:"$288.0",
   },{
+    id:11,
+    name:"Twist Dining Table",
+    favorite:false,
+    price:"$288.0",
+  },{
     id:12,
     name:"Round Dining Table",
     price:"$201.0",
@@ -82,13 +87,7 @@ const App = () => {
     id:14,
     name:"Twist Dining Table",
     price:"$288.0",
-    favorite:false,
-  },{
-    id:11,
-    name:"Twist Dining Table",
-    favorite:false,
-    price:"$288.0",
-  },{
+    favorite:false},{
     id:15,
     name:"Round Dining Table",
     price:"$201.0",
