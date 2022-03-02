@@ -419,7 +419,8 @@ Link{
   color: #ff9800;
 }
 .products ul li button{
-  border:none;
+  border:1px solid #fff;
+
   background:#ff9800;
   color:#fff;
   border-radius:3px;
@@ -427,6 +428,7 @@ Link{
   transition:0.5s;
 }
 .products ul li button:hover{
+  color:#ff9800;
   background:#fff;
   border:1px solid #ff9800;
 }

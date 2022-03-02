@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Fragment } from 'react/cjs/react.production.min';
 import simpleContext from '../context';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 const Products = () => {
     const context = useContext(simpleContext);
     const products=context.products;
@@ -18,6 +19,12 @@ const Products = () => {
         const products=[...basketProducts];
          products.push(newproduct)
         setbasketProducts(products)
+        swal({
+            title:"Successly",
+            text:"The product was added to the cast",
+            icon:"success",
+            button:"ok",
+        });
      }
     const handlfavorite=(id)=>{
         const productsCopy=[...products];

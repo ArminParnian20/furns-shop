@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Fragment } from 'react/cjs/react.production.min';
 import simpleContext from './../context';
+import swal from 'sweetalert';
+
+
 const Basket = () => {
         const context = useContext(simpleContext);
         const basket = context.basket;
@@ -11,6 +14,12 @@ const Basket = () => {
        let basketProductsCopy=[...basketProducts]
        basketProductsCopy = basketProductsCopy.filter(p=>p.id !== i);
        setbasketProducts(basketProductsCopy);
+       swal({
+        title:"Successly",
+        text:"The product was deleted to the cast",
+        icon:"success",
+        button:"ok",
+    });
     }   
     return ( <Fragment>
         <div className={basket===false ? 'cart cart-active':'cart'}>
