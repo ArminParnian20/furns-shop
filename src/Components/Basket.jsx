@@ -8,19 +8,21 @@ const Basket = () => {
         const context = useContext(simpleContext);
         const basket = context.basket;
         const setbasket = context.setbasket;
-        const basketProducts =context.basketProducts;
-         const setbasketProducts =context.setbasketProducts;
-    const deleteproducd=(i)=>{
-       let basketProductsCopy=[...basketProducts]
-       basketProductsCopy = basketProductsCopy.filter(p=>p.id !== i);
-       setbasketProducts(basketProductsCopy);
-       swal({
-        title:"Successly",
-        text:"The product was deleted to the cast",
-        icon:"success",
-        button:"ok",
-    });
-    }   
+        const products=context.products;
+        const setbasketProducts =context.setbasketProducts;
+    const price =context.price;
+    const setprice =context.setprice;
+
+    const basketProducts =context.basketProducts;
+        const addproducttoBasket=(id,m)=>{
+            let productes=[...products];
+            let p=price;
+            p=(productes[id-1].price * m) + p;
+            setprice(p);
+            productes[id-1].n=productes[id-1].n + m;
+            productes=productes.filter((p)=>p.n > 0)
+            setbasketProducts(productes);
+         } 
     return ( <Fragment>
         <div className={basket===false ? 'cart cart-active':'cart'}>
                  <div>
@@ -30,29 +32,32 @@ const Basket = () => {
                  {basketProducts.length > 0 ? 
            <ul>
                  {basketProducts.map((p)=>{
-                    return(
+                     if(p.n > 0){
+            return(
                            <li><img  src={process.env.PUBLIC_URL+`/images/${p.id}.jpg`}/>
                         <div>
                             <div className='det'>
        <p>{p.name}</p>
                            <p>{p.price}</p>
-                           <i className='bi bi-trash go-all' onClick={()=>deleteproducd(p.id)}></i>
+                           {
+                             p.n> 1? <div className='add-box'><p onClick={()=>addproducttoBasket(p.id,-1)}>-</p><p>{p.n}</p><p onClick={()=>addproducttoBasket(p.id,1)}>+</p></div> : 
+                          
+                           <i className='bi bi-trash go-all' onClick={()=>addproducttoBasket(p.id,-1)}></i>
+                         }
                             </div>
-                    
-     
                         </div>
-
                            </li>
-                       )  
-             
-            
+                       ) 
+
+                     }
+         
                    })
                }
                <button className='View-cart'>
                    <h6>View Cart</h6>
-                   <h5>189.00$</h5>
+                   <h5>{price}$</h5>
                </button>
-               </ul>
+            </ul>
            :<div className='empty'>
             <i className='bi bi-bag-x'></i>
                     <h3>Your shopping cart is empty!</h3>

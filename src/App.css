@@ -683,7 +683,7 @@ Link{
   height:100%;
   border-radius:5px;
 }
-.cart ul .det i{
+.cart ul .det i,.cart ul .det .add-box{
   margin-top:4.5rem;
 }
 .cart ul p{
@@ -717,6 +717,34 @@ Link{
   color:#ff9800;
   padding:5px;
   border-radius:5px;
+}
+.add-box{
+  display:flex;
+  width:80%;
+  margin:0 auto;
+  justify-content: space-evenly;
+}
+.add-box p{
+  border:1px solid #ff9800;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:30px;
+  font-weight:800;
+  transition:0.5s;
+}
+.add-box p:hover{
+  background:#ff9800 !important;
+  color:#fff !important;
+}
+.add-box p:nth-child(1){
+  border-bottom-left-radius:5px;
+  border-top-left-radius:5px;
+}
+.add-box p:nth-child(3){
+    border-bottom-right-radius:5px;
+  border-top-right-radius:5px;
 }
 @media screen and (max-width:900px) {
   .text-about{
