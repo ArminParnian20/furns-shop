@@ -87,7 +87,7 @@ const Header = () => {
                  </div>
                  <div className='icons'>
                      <i className='bi bi-search' onClick={()=> handlMenu(7)}></i>
-                     <i className='bi bi-person user desktop'></i>
+                     <Link className='bi bi-person user desktop link' to='/account'></Link>
                      <i className='bi bi-cart4 basket desktop'  onClick={()=> setbasket(!basket)}><span>{basketProducts.length}</span></i>
                      <i className='bi bi-gear mobile'></i>
                      <Link to='/compare' className='link desktop'>

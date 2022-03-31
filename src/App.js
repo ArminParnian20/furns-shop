@@ -13,6 +13,8 @@ import { Route, Routes } from 'react-router';
 import Wishlist from './Components/Wishlist';
 import Compare from './Components/Compare';
 import AllProducts from './Components/AllProducts';
+import Sigin from './Components/Sigin';
+import CreateAccount from './Components/CreacteAccount';
 const App = () => {
   const [basket,setbasket]=useState(true);
   const [favorites,setfavorites]=useState([]);
@@ -138,10 +140,9 @@ const App = () => {
           <Route path='/wishlist' element={<Wishlist/>}></Route>
           <Route path='/compare' element={<Compare/>}></Route>
             <Route path='/allproducts' element={<AllProducts/>}></Route>
+            <Route path='/createAccount' element={<CreateAccount/>}></Route>
+          <Route path='/account' element={<Sigin/>}></Route>
         </Routes>
-   
-    
-      
       <Footer/>
       <BottomMenu/>
 

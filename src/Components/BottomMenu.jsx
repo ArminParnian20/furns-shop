@@ -30,8 +30,12 @@ const BottomMenu = () => {
                        </li>
                     <li  onClick={()=> setbasket(!basket)}><i className='bi bi-cart4 basket'><span>{basketProducts.length}</span></i>
                     <p>Cart </p></li>
-                    <li><i className='bi bi-person'></i>
-                    <p>Account</p></li>
+                    <li>
+                    <Link to="/account" className='link'>
+                        <i className='bi bi-person'></i>
+                    <p>Account</p>
+                        </Link>
+                    </li>
 
 
                 </ul>
